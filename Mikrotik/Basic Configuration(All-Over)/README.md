@@ -8,6 +8,12 @@ This project simulates a **two-site Wide Area Network (WAN)** setup, featuring a
 
 ---
 
+## 🖼️ Project Topology Overview
+
+Here’s the visual topology of the complete Mikrotik Minimum Configuration Lab:
+
+![Project Topology](Mikrotik/Basic%20Configuration(All-Over)/Project%20image.png)
+
 ## 🎯 Project Goal
 
 The goal of this lab is to provide a fully functional GNS3 topology that helps learners and professionals practice Mikrotik configuration using both:
@@ -59,9 +65,9 @@ You will need the following software installed before starting:
 
 ## 🛠️ Installation & Setup Steps
 
-1. **Clone the Repository:**
+1. **Clone all of my Repository:**
    ```bash
-   git clone https://github.com/[your-username]/mikrotik-minimum-configuration-lab.git
+   git clone https://github.com/[your-username]/mikrotik-minimum-configuration-lab.git](https://github.com/devshuvocse/Networking.git
 
 Open the Project in GNS3:
 
@@ -96,7 +102,7 @@ Default Credentials:
 Username: admin
 
 
-Password: (blank)
+Password: (blank) but I add "itbd" in both router.
  ⚠️ Note: The tutorial sets a new password immediately for security.
 
 
