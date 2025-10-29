@@ -12,7 +12,7 @@ This project simulates a **two-site Wide Area Network (WAN)** setup, featuring a
 
 Here’s the visual topology of the complete Mikrotik Minimum Configuration Lab:
 
-![Project Topology](Mikrotik/Basic%20Configuration(All-Over)/Project%20image.png)
+![Project Topology](https://raw.githubusercontent.com/devshuvocse/Networking/main/Mikrotik/Basic%20Configuration(All-Over)/Project%20image.png)
 
 ## 🎯 Project Goal
 
