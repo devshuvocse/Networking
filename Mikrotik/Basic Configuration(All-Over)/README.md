@@ -1,6 +1,6 @@
 
 
-# ⚙️ Mikrotik Minimum Configuration Lab (GNS3)
+# ⚙️ Mikrotik Minimum Configuration Lab (GNS3) 
 
 A comprehensive GNS3 lab demonstrating the **minimum required configuration** for a Mikrotik router to achieve full network functionality — using both **Command Line Interface (CLI)** and **Graphical User Interface (GUI)** via **Winbox**.
 
@@ -67,7 +67,7 @@ You will need the following software installed before starting:
 
 1. **Clone all of my Repository:**
    ```bash
-   https://github.com/devshuvocse/Networking.git](https://github.com/devshuvocse/Networking.git
+   git clone https://github.com/devshuvocse/Networking.git](https://github.com/devshuvocse/Networking.git
 
 Open the Project in GNS3:
 
