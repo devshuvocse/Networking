@@ -67,7 +67,7 @@ You will need the following software installed before starting:
 
 1. **Clone all of my Repository:**
    ```bash
-   git clone https://github.com/devshuvocse/Networking.git](https://github.com/devshuvocse/Networking.git
+   git clone https://github.com/devshuvocse/Networking.git
 
 Open the Project in GNS3:
 
