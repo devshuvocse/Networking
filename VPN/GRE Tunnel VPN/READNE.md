@@ -106,13 +106,80 @@ add dst-address=10.100.100.0/24 gateway=10.100.250.2
 ### **Main Router Export**
 
 ```bash
-# Paste the full export of the Main router here
+[admin@Main] > export
+# 2025-11-19 05:44:46 by RouterOS 7.20.2
+# system id = +O0dftkOIdB
+#
+/interface ethernet
+set [ find default-name=ether1 ] disable-running-check=no
+set [ find default-name=ether2 ] disable-running-check=no
+set [ find default-name=ether3 ] disable-running-check=no
+set [ find default-name=ether4 ] disable-running-check=no
+set [ find default-name=ether5 ] disable-running-check=no
+set [ find default-name=ether6 ] disable-running-check=no
+set [ find default-name=ether7 ] disable-running-check=no
+set [ find default-name=ether8 ] disable-running-check=no
+/interface gre
+add local-address=192.168.122.196 name=GRE-1_By_Shuvo remote-address=192.168.122.250
+/ip pool
+add name=dhcp_pool0 ranges=10.100.100.2-10.100.100.254
+/ip dhcp-server
+add address-pool=dhcp_pool0 interface=ether2 name=dhcp1
+/port
+set 0 name=serial0
+/ip address
+add address=10.100.100.1/24 interface=ether2 network=10.100.100.0
+add address=10.100.250.2/30 interface=GRE-1_By_Shuvo network=10.100.250.0
+/ip dhcp-client
+add interface=ether1
+/ip dhcp-server network
+add address=10.100.100.0/24 gateway=10.100.100.1
+/ip route
+add dst-address=10.100.200.0/24 gateway=10.100.250.1
+/system identity
+set name=Main
+[admin@Main] > 
+
 ```
 
 ### **Secondary Router Export**
 
 ```bash
-# Paste the full export of the Secondary router here
+[admin@Secondary] > export
+# 2025-11-19 05:43:57 by RouterOS 7.20.2
+# system id = QQPC/ntA5IF
+#
+/interface ethernet
+set [ find default-name=ether1 ] disable-running-check=no
+set [ find default-name=ether2 ] disable-running-check=no
+set [ find default-name=ether3 ] disable-running-check=no
+set [ find default-name=ether4 ] disable-running-check=no
+set [ find default-name=ether5 ] disable-running-check=no
+set [ find default-name=ether6 ] disable-running-check=no
+set [ find default-name=ether7 ] disable-running-check=no
+set [ find default-name=ether8 ] disable-running-check=no
+/interface gre
+add local-address=192.168.122.250 name=GRE-1_By_Shuvo remote-address=192.168.122.196
+/ip pool
+add name=dhcp_pool0 ranges=10.100.200.2-10.100.200.254
+/ip dhcp-server
+add address-pool=dhcp_pool0 interface=ether2 name=dhcp1
+/port
+set 0 name=serial0
+/ip address
+add address=10.100.200.1/24 interface=ether2 network=10.100.200.0
+add address=10.100.250.1/30 interface=GRE-1_By_Shuvo network=10.100.250.0
+/ip dhcp-client
+add interface=ether1
+/ip dhcp-server network
+add address=10.100.200.0/24 gateway=10.100.200.1
+/ip route
+add dst-address=10.100.100.0/24 gateway=10.100.250.2
+/system identity
+set name=Secondary
+[admin@Secondary] > 
+
+
 ```
 
 ---
