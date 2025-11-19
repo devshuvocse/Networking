@@ -1,9 +1,3 @@
-Here is the **complete, clean, fully-English README.md**, formatted so you can **copy–paste directly into GitHub** without any editing.
-Everything is included together in one block.
-
----
-
-# **README.md (Final English Version — Ready to Copy & Paste)**
 
 ```md
 # 🛰️ MikroTik GRE Tunnel Project (By Shuvo)
