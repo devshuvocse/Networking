@@ -185,7 +185,7 @@ set name=Secondary
 
 ## 📘 How to Use
 
-1. Clone the repository:
+1. Clone all the repository:
 
    ```bash
    git clone https://github.com/devshuvocse/Networking.git
