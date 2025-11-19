@@ -12,10 +12,9 @@ The GRE tunnel allows full communication between the two networks.
 
 The following diagram shows the full network topology:
 
-**File:** `image.png`  
-(Place this file in the root of the repository)
 
 ```
+![Screenshot of the UI](image.png)
 
 Main Router (Left)  <------ GRE Tunnel ------>  Secondary Router (Right)
 
