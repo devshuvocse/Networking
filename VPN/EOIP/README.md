@@ -1,8 +1,4 @@
-Here is your **full, clean, English, GitHub-ready `README.md`** for the **EOIP VPN Project**, fully formatted and ready to **copy–paste**.
 
----
-
-# ✅ **README.md — EOIP Tunnel Between Two MikroTik Routers (Ready to Copy & Paste)**
 
 ```md
 # 🛰️ MikroTik EOIP VPN Project (By Shuvo)
@@ -16,9 +12,10 @@ Both routers are bridged using an EOIP tunnel and share the same subnet (`10.100
 
 ## 📡 Network Topology
 
-The following diagram is included in the project as **`image.png`**:
+
 
 ```
+![Screenshot of the UI](image.png)
 
 PC1 ---- Main Router ==== EOIP Tunnel ==== Secondary Router ---- PC2
 
@@ -125,16 +122,14 @@ add interface=ether2 name=dhcp1 address-pool=dhcp_pool0
 
 ### **Main Router Export**
 
-```bash
-# Full export from the Main router
-# (Paste from your file if needed)
+```
+bash[admin@Main] > export # 2025-11-19 07:24:46 by RouterOS 7.20.2 # system id = +O0dftkOIdB # /interface bridge add name=EOIP-Bridge /interface ethernet set [ find default-name=ether1 ] disable-running-check=no set [ find default-name=ether2 ] disable-running-check=no set [ find default-name=ether3 ] disable-running-check=no set [ find default-name=ether4 ] disable-running-check=no set [ find default-name=ether5 ] disable-running-check=no set [ find default-name=ether6 ] disable-running-check=no set [ find default-name=ether7 ] disable-running-check=no set [ find default-name=ether8 ] disable-running-check=no /interface eoip add local-address=192.168.122.196 mac-address=FE:86:DE:1A:E8:05 name=EOIP-Tunnel-Interface \ remote-address=192.168.122.250 tunnel-id=1 /ip pool add name=dhcp_pool0 ranges=10.100.100.2-10.100.100.95 /ip dhcp-server # DHCP server can not run on slave interface! add address-pool=dhcp_pool0 interface=ether2 name=dhcp1 /port set 0 name=serial0 /interface bridge port add bridge=EOIP-Bridge interface=ether2 add bridge=EOIP-Bridge interface=EOIP-Tunnel-Interface /ip address add address=10.100.100.1/24 interface=ether2 network=10.100.100.0 /ip dhcp-client add interface=ether1 /ip dhcp-server network add address=10.100.100.0/24 gateway=10.100.100.1 /system identity set name=Main [admin@Main] >
 ```
 
 ### **Secondary Router Export**
 
 ```bash
-# Full export from the Secondary router
-# (Paste from your file if needed)
+[admin@Secondary] > export # 2025-11-19 07:27:47 by RouterOS 7.20.2 # system id = QQPC/ntA5IF # /interface bridge add name=EOIP-Bridge /interface ethernet set [ find default-name=ether1 ] disable-running-check=no set [ find default-name=ether2 ] disable-running-check=no set [ find default-name=ether3 ] disable-running-check=no set [ find default-name=ether4 ] disable-running-check=no set [ find default-name=ether5 ] disable-running-check=no set [ find default-name=ether6 ] disable-running-check=no set [ find default-name=ether7 ] disable-running-check=no set [ find default-name=ether8 ] disable-running-check=no /interface eoip add local-address=192.168.122.250 mac-address=FE:BF:69:19:2F:94 name=EOIP-Tunnel-Interface \ remote-address=192.168.122.196 tunnel-id=1 /ip pool add name=dhcp_pool0 ranges=10.100.100.101-10.100.100.254 /ip dhcp-server # DHCP server can not run on slave interface! add address-pool=dhcp_pool0 interface=ether2 name=dhcp1 /port set 0 name=serial0 /interface bridge port add bridge=EOIP-Bridge interface=ether2 add bridge=EOIP-Bridge interface=EOIP-Tunnel-Interface /ip address add address=10.100.100.100/24 interface=ether2 network=10.100.100.0 /ip dhcp-client add interface=ether1 /ip dhcp-server network add address=10.100.100.0/24 gateway=10.100.100.100 /system identity set name=Secondary [admin@Secondary] >
 ```
 
 ---
